@@ -1,1 +1,1 @@
-# RRFU: Relaxed-Receptive-Field-for-Adaptive-Upsampling
+# RRFU: Relaxed Receptive Field for Adaptive Upsampling
