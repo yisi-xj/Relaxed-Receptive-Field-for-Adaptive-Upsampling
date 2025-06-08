@@ -4,7 +4,7 @@ RRFU is a lightweight plug-and-play upsampling operator with task-agnostic appli
 
 ## Highlights
 
-- **Simplicity:**: RRFU's code is concise and easy to modify;
+- **Simple code:*: RRFU's code is concise and easy to modify;
 - **Easy to use:** RRFU does not rely on any extra CUDA packages installed;
 - **precise:** RRFU can efficiently sample both internal objects and contours.
 
