@@ -2,18 +2,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-
-def xavier_init(module, gain=1.0, bias=0.0, distribution='normal'):
-    assert distribution in ['uniform', 'normal']
-    if hasattr(module, 'weight') and module.weight is not None:
-        if distribution == 'uniform':
-            nn.init.xavier_uniform_(module.weight, gain=gain)
-        else:
-            nn.init.xavier_normal_(module.weight, gain=gain)
-    if hasattr(module, 'bias') and module.bias is not None:
-        nn.init.constant_(module.bias, bias)
-
-
 def normal_init(module, mean=0.0, std=1.0, bias=0.0):
     if hasattr(module, 'weight') and module.weight is not None:
         nn.init.normal_(module.weight, mean, std)
@@ -46,10 +34,10 @@ class FRFU(nn.Module):
     def forward(self, x):
         b, c, h, w = x.shape
         x_offset = self.offset(x) * self.offset_mask(x).sigmoid()
-        x_def_offset = x_offset.reshape(b * self.groups, self.s_f, self.s_f, 2, h, w).permute(
+        x_recon_offset = x_offset.reshape(b * self.groups, self.s_f, self.s_f, 2, h, w).permute(
             0, 4, 1, 5, 2, 3).reshape(b * self.groups, self.s_f * h, self.s_f * w, 2)
-        x_def = self.offset_sample(x, x_def_offset)
-        x_up = self.dynamic_sample(x_def, self.sample_kernel(x_def) * self.kernel_mask(x_def).sigmoid())
+        x_recon = self.offset_recon(x, x_recon_offset)
+        x_up = self.dynamic_sample(x_recon, self.sample_kernel(x_recon) * self.kernel_mask(x_recon).sigmoid())
         return x_up
 
     def init_weights(self):
@@ -65,16 +53,16 @@ class FRFU(nn.Module):
             torch.arange(w, device=x.device, dtype=x.dtype) + 0.5)
         self.coord_base = torch.stack([grid_x, grid_y], dim=-1).view(1, h, w, 2)
 
-    def offset_sample(self, x, offset):
+    def offset_recon(self, x, offset):
         b, c, h, w = x.shape
         bg_o, h_o, w_o, xy = offset.shape
         if self.coord_base is None or self.coord_base.shape[1:3] != offset.shape[1:3]:
             self._init_coord_base(offset)
         grid = 2.0 * ((self.coord_base + offset) / torch.tensor([w_o, h_o], device=x.device, dtype=x.dtype).view(
             1, 1, 1, 2)) - 1
-        x_def_sample = F.grid_sample(x.reshape(b * self.groups, -1, h, w), grid, mode='bilinear',
-                                     padding_mode='border', align_corners=False).view(b, c, h_o, w_o)
-        return x_def_sample
+        x_recon_sample = F.grid_sample(x.reshape(b * self.groups, -1, h, w), grid, mode='bilinear',
+                                       padding_mode='border', align_corners=False).view(b, c, h_o, w_o)
+        return x_recon_sample
 
     def dynamic_sample(self, x, sample_kernel):
         b, c, h, w = x.shape
