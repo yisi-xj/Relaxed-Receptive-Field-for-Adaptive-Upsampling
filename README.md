@@ -67,3 +67,8 @@ FRFU is a lightweight plug-and-play upsampling operator with task-agnostic appli
 | Bilinear      | 47.6M    | 0.856         | 0.127   | 0.445 | 0.053      | 0.159              | 13.00            | 0.084 |[Link](https://github.com/yisi-xj/frfu/blob/main/NYUv2_depth/depthformer_swint_w7_nyu_bilinear_log.txt)|       |
 | **FRFU**      | +0.1M    | **0.865**     | **0.122** | **0.435** | **0.051** | **0.154**          | **12.62**        | **0.080** |[Link](https://github.com/yisi-xj/frfu/blob/main/NYUv2_depth/depthformer_swint_w7_nyu_rrfu-0.005_log.txt)|       |
 
+## Usage
+
+For application instances, one can refer to [detection-with-upsamplers](https://github.com/tiny-smart/detection-with-upsamplers), [segmentation-with-upsamplers](https://github.com/tiny-smart/segmentation-with-upsamplers) and [Monocular-Depth-Estimation-Toolbox
+]([https://github.com/tiny-smart/detection-with-upsamplers](https://github.com/zhyever/Monocular-Depth-Estimation-Toolbox)) to try upsamplers with mmcv.
+
