@@ -70,5 +70,5 @@ FRFU is a lightweight plug-and-play upsampling operator with task-agnostic appli
 ## Usage
 
 For application instances, one can refer to [detection-with-upsamplers](https://github.com/tiny-smart/detection-with-upsamplers), [segmentation-with-upsamplers](https://github.com/tiny-smart/segmentation-with-upsamplers) and [Monocular-Depth-Estimation-Toolbox
-]([https://github.com/tiny-smart/detection-with-upsamplers](https://github.com/zhyever/Monocular-Depth-Estimation-Toolbox)) to try upsamplers with mmcv.
+](https://github.com/zhyever/Monocular-Depth-Estimation-Toolbox) to try upsamplers with mmcv.
 
