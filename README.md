@@ -24,6 +24,7 @@ FRFU is a lightweight plug-and-play upsampling operator with task-agnostic appli
 ## Experimental Result
 
 :warning:Note: In the experimental logs and weight files of the project, the old name "rrfu" is used.
+
 **Table1: Semantic segmentation results with SegFormer on ADE20K**
 | SegFormer-B1 | FLOPs    | Params   | mIoU     | bIoU       |  log  | ckpt  |
 | ----------- | ------- | ------- | ------- | --------- | --- | --- |
