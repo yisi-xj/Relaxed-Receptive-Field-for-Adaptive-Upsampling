@@ -10,13 +10,13 @@ FRFU is a lightweight plug-and-play upsampling operator with task-agnostic appli
 - **Easy to use:** FRFU does not rely on any extra CUDA packages installed;
 - **precise:** FRFU can efficiently sample both internal objects and contours.
 
-## Work visualization
-
-![FRFU working principle diagram](/reademeImage/工作原理图.png "FRFU working principle diagram")
-
 ## Upsampling results
 
-![Example of Upsampling Feature Results](/reademeImage/特征图.png "Example of Upsampling Feature Results")
+<p align="left"><img src="/reademeImage/特征图.png" width="600" title="Example of Upsampling Feature Results"/></p>
+
+## Work visualization
+
+<p align="left"><img src="/reademeImage/工作原理图.png" width="800" title="FRFU working principle diagram"/></p>
 
 ## Experimental Result
 
