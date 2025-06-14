@@ -63,8 +63,8 @@ FRFU is a lightweight plug-and-play upsampling operator with task-agnostic appli
 **Table5: Monocular depth estimation results with DepthFormer on NYU Depth V2.**
 | Method        | Params   | $\delta<1.25$ | Abs Rel | RMS   | log10 | RMS log | SI log | Sq Rel |  log  | ckpt  |
 |---------------|----------|---------------|---------|-------|------------|--------------------|------------------|-------| --- | --- |
-| Nearest       | 47.6M    | 0.856         | 0.128   | 0.445 | 0.053      | 0.159              | 13.00            | 0.085 |[Link](https://github.com/yisi-xj/frfu/blob/main/NYUv2_depth/depthformer_swint_w7_nyu_nearest_log.txt)|       |
-| Bilinear      | 47.6M    | 0.856         | 0.127   | 0.445 | 0.053      | 0.159              | 13.00            | 0.084 |[Link](https://github.com/yisi-xj/frfu/blob/main/NYUv2_depth/depthformer_swint_w7_nyu_bilinear_log.txt)|       |
+| Nearest       | 47.6M    | 0.856         | 0.128   | 0.445 | 0.053      | 0.159              | 13.00            | 0.085 |[Link](https://github.com/yisi-xj/frfu/blob/main/NYUv2_depth/depthformer_swint_w7_nyu_nearest_log.txt)|[Link](https://github.com/yisi-code/frfu/releases/download/checkpoints/depthformer_swint_w7_nyu_nearest.pth)|
+| Bilinear      | 47.6M    | 0.856         | 0.127   | 0.445 | 0.053      | 0.159              | 13.00            | 0.084 |[Link](https://github.com/yisi-xj/frfu/blob/main/NYUv2_depth/depthformer_swint_w7_nyu_bilinear_log.txt)|[Link](https://github.com/yisi-code/frfu/releases/download/checkpoints/depthformer_swint_w7_nyu_bilinear.pth)|
 | **FRFU**      | +0.1M    | **0.865**     | **0.122** | **0.435** | **0.051** | **0.154**          | **12.62**        | **0.080** |[Link](https://github.com/yisi-xj/frfu/blob/main/NYUv2_depth/depthformer_swint_w7_nyu_rrfu-0.005_log.txt)|[Link](https://github.com/yisi-code/frfu/releases/download/checkpoints/depthformer_swint_w7_nyu_rrfu.pth)|
 
 ## Usage
