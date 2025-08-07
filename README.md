@@ -6,9 +6,10 @@ FRFU is a lightweight plug-and-play upsampling operator with task-agnostic appli
 
 ## Highlights
 
-- **Simple code:** FRFU's code is concise and easy to modify;
-- **Easy to use:** FRFU does not rely on any extra CUDA packages installed;
-- **precise:** FRFU can efficiently sample both internal objects and contours.
+- **Dynamic Receptive Fields:** Introduces the concept of deformable receptive fields to feature upsampling for the first time.
+- **Plug-and-Play:** FRFU requires no installation of additional CUDA packages beyond PyTorch.
+- **Efficient and Precise:** Achieves high-quality upsampling of both object interiors and boundaries with minimal overhead.
+- **Simple Implementation:** The FRFU code is concise, easily understandable, and readily modifiable.
 
 
 ## Upsampling results
